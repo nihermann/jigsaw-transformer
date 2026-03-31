@@ -88,24 +88,24 @@ def build_view_data(run_dir: Path, num_images: int) -> dict:
         pred_row = pred_positions[idx].detach().cpu().tolist()
         orig_to_scr = [0] * num_patches
         for scr_idx, orig_idx in enumerate(targets_row):
-                orig_to_scr[orig_idx] = scr_idx
+            orig_to_scr[orig_idx] = scr_idx
 
         slot_to_scr = build_reordered_slot_to_scr(pred_row, num_patches)
         patch_acc = sum(int(pred_row[i] == targets_row[i]) for i in range(num_patches)) / num_patches
 
         samples.append(
-                {
-                        "index": idx,
-                        "original": tensor_image_to_data_url(images[idx]),
-                        "scrambled": tensor_image_to_data_url(scrambled_images[idx]),
-                        "reordered": tensor_image_to_data_url(reordered_images[idx]),
-                        "targets": targets_row,
-                        "pred": pred_row,
-                        "orig_to_scr": orig_to_scr,
-                        "reordered_slot_to_scr": slot_to_scr,
-                        "attention": attn_accum[idx].detach().cpu().tolist(),
-                        "patch_acc": patch_acc,
-                }
+            {
+            "index": idx,
+            "original": tensor_image_to_data_url(images[idx]),
+            "scrambled": tensor_image_to_data_url(scrambled_images[idx]),
+            "reordered": tensor_image_to_data_url(reordered_images[idx]),
+            "targets": targets_row,
+            "pred": pred_row,
+            "orig_to_scr": orig_to_scr,
+            "reordered_slot_to_scr": slot_to_scr,
+            "attention": attn_accum[idx].detach().cpu().tolist(),
+            "patch_acc": patch_acc,
+            }
         )
 
     return {
