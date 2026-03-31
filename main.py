@@ -66,23 +66,24 @@ import wandb
 class Config:
     project: str = "jigsaw-transformer"
     entity: str = "nihermann"
-    batch_size: int = 128
-    epochs: int = 200
-    lr: float = 1e-3
-    weight_decay: float = 1e-4
-    num_workers: int = 4
 
+    num_workers: int = 4
     image_size: int = 32
     patch_size: int = 8
     num_channels: int = 3
 
-    embed_dim: int = 256
-    num_heads: int = 2
-    depth: int = 2
-    mlp_ratio: float = 1.0
-    dropout: float = 0.1
+    batch_size: int = 16
+    epochs: int = 200
+    lr: float = 0.000128
+    weight_decay: float = 0.000002
 
-    log_every: int = 100
+    embed_dim: int = 512
+    num_heads: int = 8
+    depth: int = 8
+    mlp_ratio: float = 1.0
+    dropout: float = 0.07
+
+    log_every: int = 100  # steps
     num_visualizations: int = 8
     seed: int = 42
 
