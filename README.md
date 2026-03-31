@@ -2,7 +2,7 @@
 
 This assignment studies how Transformer attention can solve a structured vision task.
 
-You will train a model that receives scrambled image patches and predicts where each patch came from in the original image.
+You will train a model that receives scrambled image patches and predicts where each patch came from in the original image. Finally you can use an interactive tool to inspect the attention weights of your model (see video below).
 
 ![Task Example](media/task_crop.png)
 
@@ -58,7 +58,7 @@ Generate the page:
 python attention.py --num-images 9 --run-dir wandb/YOUR-RUN/files
 ```
 
-![Attention Viewer Thumbnail](media/attention_viewer_thumbnail.png)
+![Attention Viewer Thumbnail](media/attention_viewer.gif)
 > Try it yourself, this is how it should also look for you when you regenerate it: [attention_viewer.html](attention_viewer.html)
 
 ## Useful API References
