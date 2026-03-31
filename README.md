@@ -1,6 +1,6 @@
 # Solving Puzzles with Transformer
 
-This assignment studies how transformer attention can solve a structured vision task.
+This assignment studies how Transformer attention can solve a structured vision task.
 
 You will train a model that receives scrambled image patches and predicts where each patch came from in the original image.
 
@@ -75,7 +75,7 @@ These are the most helpful building blocks used in the implementation:
 - PyTorch AdamW: https://pytorch.org/docs/stable/generated/torch.optim.AdamW.html
 - W&B PyTorch integration: https://docs.wandb.ai/models/integrations/pytorch
 
-## Discussion Prompts
+## Attention Discussion
 
 1. Can you spot any attention patterns?
 2. How does attention deal with ambiguous patches (e.g., very similar patches)?
@@ -85,4 +85,4 @@ These are the most helpful building blocks used in the implementation:
 ## Taking Puzzle Solving to the Next Step
 What limitations in our pipeline can you spot?
 - Surely, it would be great to enforce predicting valid puzzle permutation such that every position is only predicted once. This can be solved through bipartite matching. [Hungarian matching](https://towardsdatascience.com/hungarian-algorithm-and-its-applications-in-computer-vision/) is one of the most commonly used algorithms to find the best bipartite matching. This would allow you to find a valid permutation that maximizes the certainty of your model.
-- The current model is not really a Transformer, it only uses self-attention. Try to implement the full Transformer architecture with encoder and decoder. Will this achieve better results? Either implement it yourself from scratch or you can check out PyTorchs implementations if you are just curious ([Transformer](https://docs.pytorch.org/docs/stable/generated/torch.nn.Transformer.html), [TransformerEncoder](https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html), [TransformerDecoder](https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerDecoder.html)). This will help you understand how to use the transformer, intricate attention mechanisms and masking.
+- The current model is not really a Transformer, it only uses self-attention. Try to implement the full Transformer architecture with encoder and decoder. Will this achieve better results? Either implement it yourself from scratch or you can check out PyTorchs implementations if you are just curious ([Transformer](https://docs.pytorch.org/docs/stable/generated/torch.nn.Transformer.html), [TransformerEncoder](https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerEncoder.html), [TransformerDecoder](https://docs.pytorch.org/docs/stable/generated/torch.nn.TransformerDecoder.html)). This will help you understand how to use the Transformer, intricate attention mechanisms and masking.
